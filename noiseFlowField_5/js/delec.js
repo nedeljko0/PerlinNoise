@@ -4,7 +4,7 @@ this.pos = createVector(random(width),random(height));
 this.vel = createVector(0,0);
 this.acc = createVector(0,0);
 this.maxspeed = 2;
-
+this.h = 0;
 this.prevPos = this.pos.copy();
 
 this.update = function(){
@@ -28,7 +28,11 @@ this.applyForce = function(force){
     this.acc.add(force);
 }
 this.show = function(){
-  stroke(0, 5);
+  stroke(this.h, 255, 255, 20);
+  this.h = this.h +1;
+  if(this.h > 255){
+    this.h = 0;
+  }
   strokeWeight(1);
   line(this.pos.x, this.pos.y, this.prevPos.x, this.prevPos.y);
   //point(this.pos.x, this.pos.y);

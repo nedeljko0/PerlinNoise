@@ -12,13 +12,14 @@ var delci = [];
 var flowfield;
 
 function setup() {
-createCanvas(600, 600);
+createCanvas(400, 400);
+colorMode(HSB,255);
 cols = floor(width / scl);
 rows = floor(height / scl);
 
 flowfield = new Array(cols*rows);
 
-for (var i = 0; i < 1000; i++) {
+for (var i = 0; i < 300; i++) {
   delci[i] = new Particle();
 }
 background(255);
